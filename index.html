@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>首頁 | 台灣美食</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header-inner">
+        <p class="site-title"><a href="index.html">台灣美食</a></p>
+        <nav class="site-nav" aria-label="主選單">
+          <ul>
+            <li><a href="index.html" aria-current="page">首頁</a></li>
+            <li><a href="pages/classic-snacks.html">經典小吃</a></li>
+            <li><a href="pages/night-market.html">夜市美食</a></li>
+            <!-- Topics 3-4 belong to the partner; links are filled in after her code is merged. -->
+            <li><a href="#">甜點與飲料</a></li>
+            <li><a href="#">各地特色美食</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro">
+        <h1>歡迎來到台灣美食</h1>
+        <p>
+          台灣是一座美食之島。從街頭巷尾的經典小吃、熱鬧的夜市，到消暑的甜點飲料與各地特色料理，每一口都藏著台灣的歷史與人情味。這個網站帶你認識台灣最具代表性的美食。
+        </p>
+      </section>
+
+      <section>
+        <h2>四大美食主題</h2>
+        <div class="card-list">
+          <article class="card">
+            <h3>台灣必吃經典小吃</h3>
+            <figure>
+              <img src="images/braised-pork-rice.jpg" alt="一碗滷肉飯" width="800" height="500" />
+            </figure>
+            <p>滷肉飯、牛肉麵、小籠包……認識台灣人從小吃到大的家常美味。</p>
+            <p><a href="pages/classic-snacks.html">前往經典小吃</a></p>
+          </article>
+
+          <article class="card">
+            <h3>台灣夜市美食</h3>
+            <figure>
+              <img
+                src="images/fried-chicken-cutlet.jpg"
+                alt="攤位托盤上剛炸好的大雞排"
+                class="focus-bottom"
+                width="800"
+                height="500"
+              />
+            </figure>
+            <p>大雞排、胡椒餅、鹽酥雞……走進人聲鼎沸的夜市，感受台灣的夜生活。</p>
+            <p><a href="pages/night-market.html">前往夜市美食</a></p>
+          </article>
+
+          <article class="card">
+            <h3>台灣特色甜點與飲料</h3>
+            <p>內容製作中，敬請期待。</p>
+          </article>
+
+          <article class="card">
+            <h3>台灣各地特色美食</h3>
+            <p>內容製作中，敬請期待。</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>第一次來台灣？美食之旅建議順序</h2>
+        <ol>
+          <li>早上：吃一份傳統早餐，例如蛋餅配豆漿。</li>
+          <li>中午：來一碗滷肉飯或牛肉麵。</li>
+          <li>下午：喝一杯手搖飲，配一份甜點。</li>
+          <li>晚上：到夜市邊走邊吃，試試大雞排與胡椒餅。</li>
+        </ol>
+        <p>
+          想了解更多旅遊資訊，可以參考
+          <a href="https://www.taiwan.net.tw/" target="_blank" rel="noopener"
+            >交通部觀光署官方網站</a
+          >。
+        </p>
+      </section>
+
+      <section>
+        <h2>推薦你最愛的台灣美食</h2>
+        <form action="#" method="post">
+          <div class="form-field">
+            <label for="visitor-name">姓名</label>
+            <input type="text" id="visitor-name" name="visitor-name" required />
+          </div>
+
+          <div class="form-field">
+            <label for="visitor-email">電子郵件</label>
+            <input type="email" id="visitor-email" name="visitor-email" required />
+          </div>
+
+          <div class="form-field">
+            <label for="favorite-topic">最喜歡的主題</label>
+            <select id="favorite-topic" name="favorite-topic">
+              <option value="classic-snacks">台灣必吃經典小吃</option>
+              <option value="night-market">台灣夜市美食</option>
+              <option value="desserts-drinks">台灣特色甜點與飲料</option>
+              <option value="regional-food">台灣各地特色美食</option>
+            </select>
+          </div>
+
+          <div class="radio-group" role="radiogroup" aria-labelledby="visits-title">
+            <p id="visits-title" class="radio-group-title">你吃過幾次台灣夜市？</p>
+            <input type="radio" id="visits-none" name="visits" value="none" />
+            <label for="visits-none">還沒去過</label>
+            <input type="radio" id="visits-few" name="visits" value="few" />
+            <label for="visits-few">一到三次</label>
+            <input type="radio" id="visits-many" name="visits" value="many" />
+            <label for="visits-many">很多次</label>
+          </div>
+
+          <div class="form-field">
+            <label for="recommendation">推薦的美食與原因</label>
+            <textarea id="recommendation" name="recommendation" rows="5"></textarea>
+          </div>
+
+          <button type="submit" class="button">送出推薦</button>
+        </form>
+      </section>
+
+      <section id="credits" class="credits">
+        <h2>圖片來源</h2>
+        <p>本頁照片皆來自維基共享資源（Wikimedia Commons），依原作者授權使用。</p>
+        <ul>
+          <li>
+            滷肉飯：<a
+              href="https://commons.wikimedia.org/wiki/File:Braised_pork_rice_in_Taichung.jpg"
+              >Braised pork rice in Taichung</a
+            >，作者 Mori Chan，授權
+            <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>
+          </li>
+          <li>
+            大雞排：<a
+              href="https://commons.wikimedia.org/wiki/File:Large_fried-chicken_cutlets_of_Zhongli_Yuanhua_Store,_Hot-Star_Large_Fried_Chicken_20060331.jpg"
+              >Large fried-chicken cutlets of Zhongli Yuanhua Store</a
+            >，作者 idalingi，授權
+            <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 台灣美食</p>
+    </footer>
+  </body>
+</html>
