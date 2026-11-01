@@ -63,8 +63,8 @@ videos/                 Video files (keep them small)
 ```
 
 - Every page links `css/style.css` with a relative path (`../css/style.css` from `pages/`).
-- Pages 3-4 are the partner's. Until her zip arrives, the nav links for them stay as
-  placeholders (`<a href="#">`) and no content is written for them.
+- Pages 3-4 are the partner's (`pages/sweet.html`, `pages/food.html`). They carry the shared
+  header and menu; their content stays hers and is not rewritten.
 - When merging the partner's zip: put her pages in `pages/`, move her styles into `style.css`
   (or `css/partner.css` if they clash), and bring them into line with this file and
   `DESIGN.md`.
@@ -90,7 +90,6 @@ Every page follows this skeleton:
         <article>…</article>
       </section>
     </main>
-    <footer>…</footer>
   </body>
 </html>
 ```
@@ -116,17 +115,19 @@ Every page follows this skeleton:
 - Every `<th>` has a `scope` (`col`, `row`, `colgroup`, `rowgroup`); html-validate requires it.
 - Each topic page starts with an `.intro` section holding the `h1`, then a `.toc` nav listing
   the page's sections by `#id`.
-- Photos come only from freely licensed sources (Wikimedia Commons or our own). Every page that
-  shows a photo lists it in its `.credits` section: source link, author, license link. A photo
-  without a credit line is a defect.
+- Photos come only from freely licensed sources (Wikimedia Commons or our own). Pages carry no
+  credits section and no footer (user's choice); the source of each photo is its Commons page.
 
 ### CSS
 
-- Design values (colors, spacing, font sizes) are CSS custom properties on `:root` at the top of
-  `style.css`, named as in `DESIGN.md`. Rules use `var(--…)`, never a raw hex.
-- Order the file: variables, base element styles, layout (header/nav/main/footer), components
-  (cards, tables, forms), then page-specific rules, each under a comment heading.
-- Prefer element and class selectors. No `id` selectors, no `!important`.
+- Keep the CSS at a beginner level, the way a student writes it after looking things up. Write
+  colors and sizes directly (`#b91c1c`, `16px`), taking the values from `DESIGN.md`. No CSS
+  variables, transitions, transforms, shadows, or advanced selectors (`::marker`,
+  `:focus-visible`, attribute selectors).
+- Order the file: base element styles, header and menu, main, then components
+  (intro, cards, tables, form), then the phone-screen `@media` rule, each under a comment
+  heading.
+- Use element, class, descendant, and `:hover` selectors. No `id` selectors, no `!important`.
 
 ### Comments
 
@@ -149,8 +150,7 @@ opened in a browser to confirm it renders.
 These apply regardless of what surrounding code does:
 
 - Vanilla HTML and CSS only. No JavaScript until the user says the final-term phase has started.
-- No hardcoded design values — colors, spacing, and font sizes come from the variables in
-  `DESIGN.md`.
+- Colors, spacing, and font sizes match the values listed in `DESIGN.md`.
 - No decorative emojis in code, comments, logs, commit messages, or docs.
 - Commits are atomic — one logical change each — and follow Conventional Commits.
 - A pattern used twice is recorded here (code) or in `DESIGN.md` (appearance), so the third use
