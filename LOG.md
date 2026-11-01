@@ -10,6 +10,53 @@ session — it records what the code cannot say for itself.
 
 ---
 
+## 2026-11-01 — Menu on partner pages, no h2 bar, home photos for topics 3-4
+
+**Did:** Gave `pages/sweet.html` and `pages/food.html` the shared header and menu, pointed
+them at `../css/style.css`, and moved each page's `h1` from her header into her `.intro`
+(inline style dropped). Removed the red left bar from every `h2`. Added Commons photos to the
+topic 3-4 home cards: 春水堂珍珠奶茶 (CC0) and 台南度小月擔仔麵 (CC BY 2.0). Then removed the
+`.credits` section and the footer from every page, with their CSS and doc rows.
+
+**Why:** Credits and footer removed at the user's request, after being told CC BY photos
+require an attribution line; user chose removal over a separate credits page. User asked to remove the bar beside 本頁目錄 "and any similar component"; it was the
+same rule on all `h2`, so it went sitewide. Danzai noodles stand for regional food because
+beef noodle soup is already a topic-1 photo. The partner's hotlinked photos (shop and blog
+sites) were not reused: not freely licensed.
+
+**Watch out:** Her pages still fail html-validate and Prettier: unclosed `<article>` (傳統豆花)
+in `sweet.html`, missing `</main>` in both, plus her formatting. Left as hers. The bubble-tea
+photo is portrait, so the 250px card crop shows only the middle of the glass. Home page not yet
+checked in a browser (Playwright blocks `file:` URLs).
+
+The CC BY / CC BY-SA photos now have no on-page attribution; a credits page is the fix if
+the course or license ever needs it (sources are each file's Commons page).
+
+**Next:** Merge the partner's pages fully (structure, local images); add the video.
+
+---
+
+## 2026-10-31 — Beginner-level CSS, links to partner pages
+
+**Did:** Linked the menu and home cards to the partner's `pages/sweet.html` (topic 3) and
+`pages/food.html` (topic 4). Rewrote `css/style.css` from 543 to about 250 lines at a beginner
+level: plain hex and px values, no CSS variables, transitions, shadows, `::marker`,
+`:focus-visible`, or attribute selectors. Updated `DESIGN.md`, `CODINGSTYLE.md`, and the CSS
+part of `HTML-CSS-REFERENCE.md` to match.
+
+**Why:** User wants the CSS to look like a beginner wrote it after searching the web, not an
+intermediate design system. User chose plain values over keeping a few variables.
+
+**Watch out:** Photos are now a fixed 250px tall with `object-fit: cover`; the `focus-bottom`
+class was removed, so the fried-chicken photo crops at the center. The current menu item is no
+longer highlighted (the `aria-current` attribute stays for screen readers). The partner's pages
+link `style.css` in `pages/` (missing), have no shared header, and use inline styles and
+emojis. Not fixed: they are hers until the merge.
+
+**Next:** Merge the partner's pages into the site's structure and stylesheet; add the video.
+
+---
+
 ## 2026-10-17 — Real photos from Wikimedia Commons
 
 **Did:** Replaced the 11 SVG placeholders with freely licensed JPGs (800px wide) from Wikimedia
@@ -20,9 +67,7 @@ Photos are cropped to 16:10 in CSS.
 the license, hence the credits section. Rejected candidates: a "xiaolongbao" photo that was
 really 包子, a cutlet photo of a cook's back, and photos with recognizable faces.
 
-**Watch out:** If a photo is swapped, update its credit line on every page that uses it
-(滷肉飯 and 大雞排 also appear on the home page). The video file itself is still missing; only
-the poster is real.
+**Watch out:** The video file itself is still missing; only the poster is real.
 
 **Next:** Add `videos/night-market.mp4`, then merge the partner's zip.
 
